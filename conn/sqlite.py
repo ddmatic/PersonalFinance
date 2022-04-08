@@ -16,7 +16,7 @@ def create_record(connection, record):
         try:
             cursor = connection.cursor()
             cursor.execute("INSERT INTO finance(category, amount) VALUES (:category, :amount)",
-                       {'category': record.category, 'amount': record.amount})
+                           {'category': record.category, 'amount': record.amount})
             connection.commit()
         except Error as e:
             print(e)
